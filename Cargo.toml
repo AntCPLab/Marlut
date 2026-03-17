@@ -1,0 +1,5 @@
+[workspace]
+members = [
+  "marlut",
+  "marlut-proc-macros"
+]

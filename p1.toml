@@ -1,0 +1,18 @@
+party_index = 1
+[p1]
+address = "172.16.45.134"
+port = 8800
+certificate = "keys/p1.pem"
+private_key = "keys/p1.key"
+
+[p2]
+address = "172.16.45.133"
+port = 8800
+certificate = "keys/p2.pem"
+private_key = "keys/p2.key"
+
+[p3]
+address = "172.16.45.135"
+port = 8800
+certificate = "keys/p3.pem"
+private_key = "keys/p3.key"

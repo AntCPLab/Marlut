@@ -1,0 +1,61 @@
+
+[package]
+name = "marlut"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+benchmark-helper = ["criterion"]
+verbose-timing = []
+clmul = []
+
+default = [
+    "clmul",
+    "GF8",
+    "GF8NonPre",
+    "FP16Exp",
+    "FP8Add",
+    "Boolean",
+]
+
+GF8 = []
+GF8NonPre = []
+FP16Exp = []
+FP8Add = []
+Boolean = []
+
+GF8_3 = []
+GF8NonPre_3 = []
+FP16Exp_3 = []
+FP8Add_3 = []
+Boolean_3 = []
+
+[dependencies]
+rustls = {version = "0.22.1"}
+rustls-pemfile = "2.0.0"
+serde = {version = "1.0", features = ["derive"]}
+toml = "0.8"
+oneshot = "0.1.6"
+itertools = "0.12.1"
+lazy_static = {version = "1.4.0" }
+criterion = {version ="0.4", optional = true }
+rayon = "1.10.0"
+rand = {version = "0.8.5"}
+sha2 = "0.10.8"
+rand_chacha = "0.3.1"
+clap = {version = "4.4.13", features = ["derive"]}
+marlut-proc-macros = { path = "../marlut-proc-macros" }
+
+[dev-dependencies]
+# serial_test = "*"
+criterion = "0.5.1"
+
+[lib]
+required-features = ["verbose-timing"]
+
+[[bench]]
+name = "field_mul_benchmark"
+harness = false
+required-features = ["clmul"]

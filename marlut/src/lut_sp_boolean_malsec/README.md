@@ -1,0 +1,1 @@
+This crate is a reference implementation of our maliciously secure protocol for $\mathbb{GF}(2^k)$. Its concrete efficiency is not great, due to the need to convert each individual bit (element in $\mathbb{F}_2$) into an element in $\mathbb{F}_p$ (e.g. one element in $\mathbf{GF}(2^8)$, one byte, needs to be lifted into 8 elements in $\mathbb{F}_p$, 64 bytes).
